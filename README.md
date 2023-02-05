@@ -4,6 +4,11 @@
 ```
 npm install
 ```
+To Load The Tailwind Effects Please Type 
+
+```
+npm run dev
+```
 
 ### Compiles and hot-reloads for development
 ```
