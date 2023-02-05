@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld />
+  <y-container />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import YContainer from "./components/container.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    YContainer,
   },
 };
 </script>
