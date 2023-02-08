@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .active-color{
+        @apply ring-1 ring-blue-900 ring-offset-1
+    }
+}

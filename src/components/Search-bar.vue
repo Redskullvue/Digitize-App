@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between mb-4 mt-11 px-4">
+  <div class="flex items-center justify-between mb-4 mt-11 px-4 md:hidden">
     <div>
       <img class="w-8 h-8" src="../assets/images/logo.png" alt="logo" />
     </div>
