@@ -1,10 +1,11 @@
 <template>
   <div class="container mx-auto">
-    <div>
+    <div class>
       <search-bar />
+      <desktop-search-bar />
     </div>
     <div
-      class="grid grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8"
+      class="grid mb-16 grid-cols-12 md:grid-rows-[55px_minmax(500px,_1fr)] md:gap-8"
     >
       <!-- Side Bar  -->
       <div class="col-span-3 row-span-2 hidden md:block">
@@ -94,13 +95,16 @@
         </div>
       </div>
     </div>
+    <bottom-nav />
   </div>
 </template>
 
 <script>
-import SearchBar from "./Search-bar.vue";
+import SearchBar from "./Search-bar-mobile.vue";
+import desktopSearchBar from "./Search-bar-desktop.vue";
 import ProductCard from "./product-card.vue";
 import sideBar from "./side-bar.vue";
+import bottomNav from "./mobile-nav.vue";
 
 export default {
   name: "YContainer",
@@ -108,6 +112,8 @@ export default {
     SearchBar,
     ProductCard,
     sideBar,
+    desktopSearchBar,
+    bottomNav,
   },
   data() {
     return {
