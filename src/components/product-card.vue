@@ -1,15 +1,15 @@
 <template>
   <div class="bg-white rounded-lg overflow-hidden px-2 py-4 shadow-md">
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center bg-auto">
       <img
-        class="mb-2 rounded-lg"
-        src="../assets/images/watch.jpeg"
+        class="mb-2 rounded-lg object-cover"
+        :src="require(`@/assets/images/${image}.jpeg`)"
         alt="Image"
       />
     </div>
     <div>
       <div
-        class="font-light text-gray-200 mt-2 text-xs mb-4 flex items-center justify-between md:text-base"
+        class="font-light text-gray-200 mt-4 text-xs mb-4 flex items-center justify-between md:text-base"
       >
         {{ brand }}
         <div class="display flex items-center justify-center">
@@ -44,6 +44,7 @@ export default {
     id: { type: String, required: false },
     price: { type: String, required: true },
     brand: { type: String, required: true },
+    image: { type: String, required: true },
     colors: { type: Array, required: true },
   },
 };
