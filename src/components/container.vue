@@ -9,7 +9,7 @@
     >
       <!-- Side Bar  -->
       <div class="col-span-3 row-span-2 hidden md:block">
-        <side-bar />
+        <side-bar :products="selectedProducts" @changeCategory="sort" />
       </div>
       <!-- Sort Section -->
       <div class="col-span-9 row-span-1 hidden md:block">
@@ -121,15 +121,17 @@ export default {
         {
           id: "0",
           name: "ساعت هوشمند اپل سری 8 ",
+          section: "Watch",
           price: "5,250,000",
-          image: "../assets/images/watch.jpeg",
+          image: "watch",
           brand: "اپل",
           colors: ["bg-black", "bg-blue-500", "bg-red-500"],
         },
         {
           id: "1",
           name: "ساعت هوشمند اپل سری 3 ",
-          image: "../assets/images/watch.jpeg",
+          section: "Watch",
+          image: "watch",
           brand: "اپل",
           price: "3,250,000",
           colors: ["bg-stone-800", "bg-blue-900", "bg-red-500"],
@@ -137,7 +139,8 @@ export default {
         {
           id: "2",
           name: "ساعت هوشمند اپل سری 6 ",
-          image: "watch.jpeg",
+          section: "Watch",
+          image: "watch",
           brand: "اپل",
           price: "7,250,000",
           colors: ["bg-gray-100", "bg-blue-200", "bg-green-500"],
@@ -145,7 +148,8 @@ export default {
         {
           id: "3",
           name: "ساعت هوشمند اپل سری 6 ",
-          image: "watch.jpeg",
+          section: "Watch",
+          image: "watch",
           brand: "اپل",
           price: "7,250,000",
           colors: ["bg-black", "bg-blue-100", "bg-red-500"],
@@ -153,7 +157,8 @@ export default {
         {
           id: "4",
           name: "ساعت هوشمند اپل سری 3 ",
-          image: "../assets/images/watch.jpeg",
+          section: "Watch",
+          image: "watch",
           brand: "اپل",
           price: "3,250,000",
           colors: ["bg-red-500", "bg-blue-900", "bg-pink-500"],
@@ -161,14 +166,112 @@ export default {
         {
           id: "5",
           name: "ساعت هوشمند اپل سری6 ",
-          image: "../assets/images/watch.jpeg",
+          section: "Watch",
+          image: "watch",
           brand: "اپل",
           price: "10,250,000",
           colors: ["bg-red-500", "bg-blue-900", "bg-pink-500"],
         },
+        {
+          id: "6",
+          name: "موبایل سامسونگ مدل A50",
+          section: "Mobile",
+          image: "A50",
+          brand: "سامسونگ",
+          price: "8,400,000",
+          colors: ["bg-gray-100", "bg-blue-800", "bg-red-400"],
+        },
+        {
+          id: "7",
+          name: "موبایل سامسونگ مدل S21",
+          section: "Mobile",
+          image: "S21",
+          brand: "سامسونگ",
+          price: "20,400,000",
+          colors: ["bg-blue-400", "bg-slate-800", "bg-green-400"],
+        },
+      ],
+      selectedProducts: [
+        {
+          id: "0",
+          name: "ساعت هوشمند اپل سری 8 ",
+          section: "Watch",
+          price: "5,250,000",
+          image: "watch",
+          brand: "اپل",
+          colors: ["bg-black", "bg-blue-500", "bg-red-500"],
+        },
+        {
+          id: "1",
+          name: "ساعت هوشمند اپل سری 3 ",
+          section: "Watch",
+          image: "watch",
+          brand: "اپل",
+          price: "3,250,000",
+          colors: ["bg-stone-800", "bg-blue-900", "bg-red-500"],
+        },
+        {
+          id: "2",
+          name: "ساعت هوشمند اپل سری 6 ",
+          section: "Watch",
+          image: "watch",
+          brand: "اپل",
+          price: "7,250,000",
+          colors: ["bg-gray-100", "bg-blue-200", "bg-green-500"],
+        },
+        {
+          id: "3",
+          name: "ساعت هوشمند اپل سری 6 ",
+          section: "Watch",
+          image: "watch",
+          brand: "اپل",
+          price: "7,250,000",
+          colors: ["bg-black", "bg-blue-100", "bg-red-500"],
+        },
+        {
+          id: "4",
+          name: "ساعت هوشمند اپل سری 3 ",
+          section: "Watch",
+          image: "watch",
+          brand: "اپل",
+          price: "3,250,000",
+          colors: ["bg-red-500", "bg-blue-900", "bg-pink-500"],
+        },
+        {
+          id: "5",
+          name: "ساعت هوشمند اپل سری6 ",
+          section: "Watch",
+          image: "watch",
+          brand: "اپل",
+          price: "10,250,000",
+          colors: ["bg-red-500", "bg-blue-900", "bg-pink-500"],
+        },
+        {
+          id: "6",
+          name: "موبایل سامسونگ مدل A50",
+          section: "Mobile",
+          image: "A50",
+          brand: "سامسونگ",
+          price: "8,400,000",
+          colors: ["bg-gray-100", "bg-blue-800", "bg-red-400"],
+        },
+        {
+          id: "7",
+          name: "موبایل سامسونگ مدل S21",
+          section: "Mobile",
+          image: "S21",
+          brand: "سامسونگ",
+          price: "20,400,000",
+          colors: ["bg-blue-400", "bg-slate-800", "bg-green-400"],
+        },
       ],
       sorting: { sort: 1, activeClass: "text-slate-800 font-bold" },
     };
+  },
+  methods: {
+    sort(e) {
+      this.productsInfo = e;
+    },
   },
 };
 </script>
