@@ -10,7 +10,7 @@
         >
           <a href="#" class="flex items-center py-2">
             <span class="relative h-6 w-6 rounded-full bg-gray-100">
-              <i-mobile class="absolute -bottom-1 -left-1" />
+              <i-shop class="absolute -bottom-1 -left-1" />
             </span>
             <span class="mr-2 text-slate-800"> همه محصولات</span></a
           >
@@ -248,14 +248,13 @@
 </template>
 
 <script>
-import iMobile from "./icons/imobile.vue";
-import iLapTop from "./icons/ilaptop.vue";
-import iWatch from "./icons/iClock.vue";
+import { iShop, iMobile, iWatch, iLapTop } from "./icons/index";
 export default {
   components: {
     iMobile,
     iLapTop,
     iWatch,
+    iShop,
   },
   props: {
     products: { type: Array, required: true },
@@ -265,10 +264,12 @@ export default {
       // This data is For Accordion Number 1 to Toggle
       isBrandsAcc: false,
       isColorAcc: false,
+      //This is for sort and filtering
       selectedCategory: [],
     };
   },
   methods: {
+    //These 3 functions below indicate how to sort our product and show it to the user
     smartWatch() {
       this.selectedCategory = [];
       this.products.filter((item) => {
