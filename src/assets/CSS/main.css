@@ -8,4 +8,7 @@
     .active-color{
         @apply ring-1 ring-blue-900 ring-offset-1
     }
+    .active-bar {
+        @apply font-bold text-slate-800
+    }
 }

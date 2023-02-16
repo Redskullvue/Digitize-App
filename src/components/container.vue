@@ -32,47 +32,34 @@
               />
             </svg>
           </div>
-
-          <button @click="sorting.sort = 1" class="py-4 relative">
-            <span v-if="sorting.sort !== 1">محبوب ترین</span>
-            <span v-if="sorting.sort == 1" class="font-bold text-slate-800"
-              >محبوب ترین</span
-            >
+          <button @click="sorting = 1" class="py-4 relative">
+            <span ref="popular" class="active-bar">محبوب ترین</span>
             <span
-              v-if="sorting.sort == 1"
+              v-if="sorting == 1"
               class="w-2 h-2 rounded-lg absolute bg-orange-600 top-1 left-0"
             ></span>
           </button>
 
-          <button @click="sorting.sort = 2" class="py-4 relative">
-            <span v-if="sorting.sort != 2"> پر بازدید ترین</span>
-            <span v-if="sorting.sort == 2" class="font-bold text-slate-800">
-              پر بازدید ترین</span
-            >
+          <button @click="sorting = 2" class="py-4 relative">
+            <span ref="mostView"> پر بازدید ترین</span>
             <span
-              v-if="sorting.sort == 2"
+              v-if="sorting == 2"
               class="w-2 h-2 rounded-lg absolute bg-orange-600 top-1 left-0"
             ></span>
           </button>
 
-          <button @click="sorting.sort = 3" class="py-4 relative">
-            <span v-if="sorting.sort != 3">گران ترین </span>
-            <span v-if="sorting.sort == 3" class="font-bold text-slate-800"
-              >گران ترین
-            </span>
+          <button @click="sorting = 3" class="py-4 relative">
+            <span ref="mostExpensive">گران ترین </span>
             <span
-              v-if="sorting.sort == 3"
+              v-if="sorting == 3"
               class="w-2 h-2 rounded-lg absolute bg-orange-600 top-1 left-0"
             ></span>
           </button>
 
-          <button @click="sorting.sort = 4" class="py-4 relative">
-            <span v-if="sorting.sort != 4"> پر فروش ترین </span>
-            <span v-if="sorting.sort == 4" class="font-bold text-slate-800">
-              پر فروش ترین
-            </span>
+          <button @click="sorting = 4" class="py-4 relative">
+            <span ref="mostSales"> پر فروش ترین </span>
             <span
-              v-if="sorting.sort == 4"
+              v-if="sorting == 4"
               class="w-2 h-2 rounded-lg absolute bg-orange-600 top-1 left-0"
             ></span>
           </button>
@@ -265,12 +252,37 @@ export default {
           colors: ["bg-blue-400", "bg-slate-800", "bg-green-400"],
         },
       ],
-      sorting: { sort: 1, activeClass: "text-slate-800 font-bold" },
+      sorting: 1,
     };
   },
   methods: {
     sort(e) {
       this.productsInfo = e;
+    },
+  },
+  watch: {
+    sorting() {
+      if (this.sorting == 1) {
+        for (let ref in this.$refs) {
+          this.$refs[ref].classList.remove("active-bar");
+        }
+        this.$refs.popular.classList.add("active-bar");
+      } else if (this.sorting == 2) {
+        for (let ref in this.$refs) {
+          this.$refs[ref].classList.remove("active-bar");
+        }
+        this.$refs.mostView.classList.add("active-bar");
+      } else if (this.sorting == 3) {
+        for (let ref in this.$refs) {
+          this.$refs[ref].classList.remove("active-bar");
+        }
+        this.$refs.mostExpensive.classList.add("active-bar");
+      } else if (this.sorting == 4) {
+        for (let ref in this.$refs) {
+          this.$refs[ref].classList.remove("active-bar");
+        }
+        this.$refs.mostSales.classList.add("active-bar");
+      }
     },
   },
 };
