@@ -1,15 +1,10 @@
 <template>
-  <y-container />
+  <router-view />
 </template>
 
 <script>
-import YContainer from "./components/container.vue";
-
 export default {
   name: "App",
-  components: {
-    YContainer,
-  },
 };
 </script>
 

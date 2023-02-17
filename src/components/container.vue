@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div class>
-      <search-bar />
+      <search-bar-mobile />
       <desktop-search-bar />
     </div>
     <div
@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import SearchBar from "./Search-bar-mobile.vue";
+import SearchBarMobile from "./Search-bar-mobile.vue";
 import desktopSearchBar from "./Search-bar-desktop.vue";
 import ProductCard from "./product-card.vue";
 import sideBar from "./side-bar.vue";
@@ -96,7 +96,7 @@ import bottomNav from "./mobile-nav.vue";
 export default {
   name: "YContainer",
   components: {
-    SearchBar,
+    SearchBarMobile,
     ProductCard,
     sideBar,
     desktopSearchBar,

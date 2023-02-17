@@ -29,9 +29,14 @@
     <div
       class="text-orange-400 px-2 py-1 mt-4 text-center border-t-2 border-gray-100"
     >
-      <button class="text-sm font-bold md:text-lg" @click="test">
-        مشاهده و سفارش
-      </button>
+      <router-link to="/product"
+        ><button
+          @click="sendProductTitle(name)"
+          class="text-sm font-bold md:text-lg"
+        >
+          مشاهده و سفارش
+        </button></router-link
+      >
     </div>
   </div>
 </template>
@@ -46,6 +51,12 @@ export default {
     brand: { type: String, required: true },
     image: { type: String, required: true },
     colors: { type: Array, required: true },
+  },
+  methods: {
+    //We need to retrive this in the other side of the program
+    sendProductTitle(name) {
+      this.$emit("singleProductTitle", name);
+    },
   },
 };
 </script>
