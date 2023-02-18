@@ -77,6 +77,7 @@
               :colors="product.colors"
               :image="product.image"
               :brand="product.brand"
+              :section="product.section"
             />
           </div>
         </div>
@@ -108,7 +109,7 @@ export default {
         {
           id: "0",
           name: "ساعت هوشمند اپل سری 8 ",
-          section: "Watch",
+          section: "ساعت",
           price: "5,250,000",
           image: "watch",
           brand: "اپل",
@@ -117,7 +118,7 @@ export default {
         {
           id: "1",
           name: "ساعت هوشمند اپل سری 3 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "3,250,000",
@@ -126,7 +127,7 @@ export default {
         {
           id: "2",
           name: "ساعت هوشمند اپل سری 6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "7,250,000",
@@ -135,7 +136,7 @@ export default {
         {
           id: "3",
           name: "ساعت هوشمند اپل سری 6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "7,250,000",
@@ -144,7 +145,7 @@ export default {
         {
           id: "4",
           name: "ساعت هوشمند اپل سری 3 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "3,250,000",
@@ -153,7 +154,7 @@ export default {
         {
           id: "5",
           name: "ساعت هوشمند اپل سری6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "10,250,000",
@@ -162,7 +163,7 @@ export default {
         {
           id: "6",
           name: "موبایل سامسونگ مدل A50",
-          section: "Mobile",
+          section: "تلفن همراه",
           image: "A50",
           brand: "سامسونگ",
           price: "8,400,000",
@@ -171,7 +172,7 @@ export default {
         {
           id: "7",
           name: "موبایل سامسونگ مدل S21",
-          section: "Mobile",
+          section: "تلفن همراه",
           image: "S21",
           brand: "سامسونگ",
           price: "20,400,000",
@@ -182,7 +183,7 @@ export default {
         {
           id: "0",
           name: "ساعت هوشمند اپل سری 8 ",
-          section: "Watch",
+          section: "ساعت",
           price: "5,250,000",
           image: "watch",
           brand: "اپل",
@@ -191,7 +192,7 @@ export default {
         {
           id: "1",
           name: "ساعت هوشمند اپل سری 3 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "3,250,000",
@@ -200,7 +201,7 @@ export default {
         {
           id: "2",
           name: "ساعت هوشمند اپل سری 6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "7,250,000",
@@ -209,7 +210,7 @@ export default {
         {
           id: "3",
           name: "ساعت هوشمند اپل سری 6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "7,250,000",
@@ -218,7 +219,7 @@ export default {
         {
           id: "4",
           name: "ساعت هوشمند اپل سری 3 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "3,250,000",
@@ -227,7 +228,7 @@ export default {
         {
           id: "5",
           name: "ساعت هوشمند اپل سری6 ",
-          section: "Watch",
+          section: "ساعت",
           image: "watch",
           brand: "اپل",
           price: "10,250,000",
@@ -236,7 +237,7 @@ export default {
         {
           id: "6",
           name: "موبایل سامسونگ مدل A50",
-          section: "Mobile",
+          section: "تلفن همراه",
           image: "A50",
           brand: "سامسونگ",
           price: "8,400,000",
@@ -245,7 +246,7 @@ export default {
         {
           id: "7",
           name: "موبایل سامسونگ مدل S21",
-          section: "Mobile",
+          section: "تلفن همراه",
           image: "S21",
           brand: "سامسونگ",
           price: "20,400,000",

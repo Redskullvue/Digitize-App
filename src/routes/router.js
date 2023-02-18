@@ -1,18 +1,20 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
-import homePage from "../components/container.vue";
-import SingleProduct from "../views/singleproduct.vue"
+import homePage from "../components/mainPage.vue";
+import SingleProduct from "../components/singleproduct.vue"
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: homePage
+    component: homePage,
   },
   {
-    path: '/product',
+    path: '/product/:data',
     name : "SingleProduct",
-    component: SingleProduct
+    component: SingleProduct,
+    props: true,
+    meta : {title : "Mobile"}
   }
 ]
 

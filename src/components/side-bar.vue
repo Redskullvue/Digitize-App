@@ -273,7 +273,7 @@ export default {
     smartWatch() {
       this.selectedCategory = [];
       this.products.filter((item) => {
-        if (item.section == "Watch") {
+        if (item.section == "ساعت") {
           this.selectedCategory.push(item);
         }
       });
@@ -282,7 +282,7 @@ export default {
     smartPhone() {
       this.selectedCategory = [];
       this.products.filter((item) => {
-        if (item.section == "Mobile") {
+        if (item.section == "تلفن همراه") {
           this.selectedCategory.push(item);
         }
       });
