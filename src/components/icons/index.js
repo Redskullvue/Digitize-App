@@ -6,6 +6,7 @@ import iHeart from './iHeart.vue';
 import iSquares from './iSquares.vue';
 import iForward from './iforward.vue';
 import iBackChevron from './ibackchevron.vue';
+import iGrauntee from './iGrauntee.vue';
 
 export {
     iShop , 
@@ -15,5 +16,6 @@ export {
     iHeart , 
     iSquares,
     iForward,
-    iBackChevron
+    iBackChevron,
+    iGrauntee
 }
