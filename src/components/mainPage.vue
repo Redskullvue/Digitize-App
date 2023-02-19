@@ -167,7 +167,7 @@ export default {
           image: "A50",
           brand: "سامسونگ",
           price: "8,400,000",
-          colors: ["bg-gray-100", "bg-blue-800", "bg-red-400"],
+          colors: ["bg-green-300", "bg-blue-800", "bg-red-400"],
         },
         {
           id: "7",
@@ -241,7 +241,7 @@ export default {
           image: "A50",
           brand: "سامسونگ",
           price: "8,400,000",
-          colors: ["bg-gray-100", "bg-blue-800", "bg-red-400"],
+          colors: ["bg-green-300", "bg-blue-800", "bg-red-400"],
         },
         {
           id: "7",
