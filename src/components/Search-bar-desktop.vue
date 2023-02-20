@@ -9,10 +9,10 @@
         </a>
       </li>
       <li>
-        <a
+        <router-link
           class="p-4 block hover:text-orange-400 transition-all duration-150"
-          href="#"
-          >خانه</a
+          to="/"
+          >خانه</router-link
         >
       </li>
       <li>
