@@ -119,6 +119,7 @@
                 type="checkbox"
                 named="brand"
                 id="apple"
+                v-model="isApple"
                 class="form-checkbox rounded text-orange-500 focus:ring-orange-500"
               />
               <span class="mr-2 text-slate-500">اپل</span>
@@ -137,6 +138,7 @@
                 type="checkbox"
                 named="brand"
                 id="Samsung"
+                v-model="isSamsung"
                 class="form-checkbox rounded text-orange-500 focus:ring-orange-500"
               />
               <span class="mr-2 text-slate-500">سامسونگ</span>
@@ -257,7 +259,7 @@ export default {
     iShop,
   },
   props: {
-    products: { type: Array, required: true },
+    products: { type: Array },
   },
   data() {
     return {
@@ -266,11 +268,15 @@ export default {
       isColorAcc: false,
       //This is for sort and filtering
       selectedCategory: [],
+      //ChechBoxes
+      isSamsung: false,
+      isApple: false,
     };
   },
   methods: {
     //These 3 functions below indicate how to sort our product and show it to the user
     smartWatch() {
+      this.$router.push("/");
       this.selectedCategory = [];
       this.products.filter((item) => {
         if (item.section == "ساعت") {
@@ -280,6 +286,7 @@ export default {
       this.$emit("changeCategory", this.selectedCategory);
     },
     smartPhone() {
+      this.$router.push("/");
       this.selectedCategory = [];
       this.products.filter((item) => {
         if (item.section == "تلفن همراه") {
@@ -289,11 +296,46 @@ export default {
       this.$emit("changeCategory", this.selectedCategory);
     },
     resetSort() {
+      this.$router.push("/");
       this.selectedCategory = [];
       this.products.forEach((item) => {
         this.selectedCategory.push(item);
       });
       this.$emit("changeCategory", this.selectedCategory);
+    },
+  },
+  watch: {
+    isSamsung() {
+      this.selectedCategory = [];
+      this.products.filter((item) => {
+        if (item.brand == "سامسونگ") {
+          this.selectedCategory.push(item);
+        }
+      });
+      this.$emit("changeCategory", this.selectedCategory);
+      if (this.isSamsung == false) {
+        this.selectedCategory = [];
+        this.products.forEach((item) => {
+          this.selectedCategory.push(item);
+        });
+        this.$emit("changeCategory", this.selectedCategory);
+      }
+    },
+    isApple() {
+      this.selectedCategory = [];
+      this.products.filter((item) => {
+        if (item.brand == "اپل") {
+          this.selectedCategory.push(item);
+        }
+      });
+      this.$emit("changeCategory", this.selectedCategory);
+      if (this.isApple == false) {
+        this.selectedCategory = [];
+        this.products.forEach((item) => {
+          this.selectedCategory.push(item);
+        });
+        this.$emit("changeCategory", this.selectedCategory);
+      }
     },
   },
 };
