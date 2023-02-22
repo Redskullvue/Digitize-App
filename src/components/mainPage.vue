@@ -82,6 +82,12 @@
               :storage="product.storage"
             />
           </div>
+          <div
+            class="text-center col-span-12 font-bold"
+            v-if="productsInfo.length <= 0"
+          >
+            <h1>محصول مورد نظر یافت نشد</h1>
+          </div>
         </div>
       </div>
     </div>
