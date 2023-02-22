@@ -47,6 +47,8 @@ export default {
     image: { type: String, required: true },
     section: { type: String, required: true },
     colors: { type: Array, required: true },
+    english: { type: String, required: true },
+    storage: { type: String, required: false },
   },
   methods: {
     //We need to retrive this in the other side of the program
@@ -58,6 +60,8 @@ export default {
         colors: this.colors,
         image: this.image,
         section: this.section,
+        english: this.english,
+        storage: this.storage,
       };
       this.$router.push({
         name: "SingleProduct",
