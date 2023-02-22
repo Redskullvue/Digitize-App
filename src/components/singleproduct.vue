@@ -1,3 +1,4 @@
+<!-- Single Product Page -->
 <template>
   <!-- Header -->
   <div class="p-1">
@@ -114,7 +115,15 @@
                 <h2 class="text-slate-800 md:text-xl">
                   {{ singleProductInfo.name }}
                 </h2>
-                <h4 class="text-gray-400 mt-2 md:text-lg">Samsung A50 256gb</h4>
+                <h4
+                  v-if="singleProductInfo.english"
+                  class="text-gray-400 mt-2 md:text-lg"
+                >
+                  {{ singleProductInfo.english }}
+                  <span v-if="singleProductInfo.storage != 'ندارد'">
+                    {{ singleProductInfo.storage }}
+                  </span>
+                </h4>
               </div>
               <!-- Color Palette Section -->
               <div
@@ -162,7 +171,7 @@
                 <ul class="md:list-disc list-inside marker:text-orange-500">
                   <li class="flex flex-col gap-y-1 md:flex-row">
                     <span class="text-gray-500">حافظه داخلی : </span>
-                    <span>256 گیگابایت</span>
+                    <span>{{ singleProductInfo.storage }}</span>
                   </li>
                   <li class="flex flex-col gap-y-1 md:flex-row">
                     <span class="text-gray-500"> اندازه صفحه نمایش: </span>
@@ -255,6 +264,7 @@ export default {
   },
   created() {
     this.singleProductInfo = JSON.parse(this.data);
+    console.log(this.singleProductInfo);
     document.title = this.singleProductInfo.name;
   },
 };
