@@ -8,11 +8,11 @@
           @click="resetSort"
           class="mb-1 hover:bg-gray-100 cursor-pointer rounded-md"
         >
-          <a href="#" class="flex items-center py-2">
+          <router-link to="/" href="#" class="flex items-center py-2">
             <span class="relative h-6 w-6 rounded-full bg-gray-100">
               <i-shop class="absolute -bottom-1 -left-1" />
             </span>
-            <span class="mr-2 text-slate-800"> همه محصولات</span></a
+            <span class="mr-2 text-slate-800"> همه محصولات</span></router-link
           >
         </li>
 
@@ -129,6 +129,7 @@
                 type="checkbox"
                 named="brand"
                 id="Xiaomi"
+                v-model="isXiaomi"
                 class="form-checkbox rounded text-orange-500 focus:ring-orange-500"
               />
               <span class="mr-2 text-slate-500">شیاومی</span>
@@ -258,9 +259,7 @@ export default {
     iWatch,
     iShop,
   },
-  props: {
-    products: { type: Array },
-  },
+  props: ["products"],
   data() {
     return {
       // This data is For Accordion Number 1 to Toggle
@@ -271,6 +270,7 @@ export default {
       //ChechBoxes
       isSamsung: false,
       isApple: false,
+      isXiaomi: false,
     };
   },
   methods: {
@@ -278,41 +278,64 @@ export default {
     smartWatch() {
       this.$router.push("/");
       this.selectedCategory = [];
-      this.products.filter((item) => {
-        if (item.section == "ساعت") {
-          this.selectedCategory.push(item);
-        }
-      });
+      if (this.products != undefined) {
+        this.products.filter((item) => {
+          if (item.section == "ساعت") {
+            this.selectedCategory.push(item);
+          }
+        });
+      }
       this.$emit("changeCategory", this.selectedCategory);
     },
     smartPhone() {
       this.$router.push("/");
       this.selectedCategory = [];
-      this.products.filter((item) => {
-        if (item.section == "تلفن همراه") {
-          this.selectedCategory.push(item);
-        }
-      });
+      if (this.products != undefined) {
+        this.products.filter((item) => {
+          if (item.section == "تلفن همراه") {
+            this.selectedCategory.push(item);
+          }
+        });
+      }
       this.$emit("changeCategory", this.selectedCategory);
     },
     resetSort() {
       this.$router.push("/");
       this.selectedCategory = [];
-      this.products.forEach((item) => {
-        this.selectedCategory.push(item);
-      });
+      if (this.products != undefined) {
+        this.products.forEach((item) => {
+          this.selectedCategory.push(item);
+        });
+      }
+      this.$emit("changeCategory", this.selectedCategory);
+    },
+    checkAll(e) {
+      this.selectedCategory = [];
+      if (e == "اپل") {
+        this.products.forEach((item) => {
+          if (item.brand == "اپل") {
+            this.selectedCategory.push(item);
+          }
+        });
+      } else if (e == "سامسونگ") {
+        this.products.forEach((item) => {
+          if (item.brand == "سامسونگ") {
+            this.selectedCategory.push(item);
+          }
+        });
+      } else if (e == "شیائومی") {
+        this.products.forEach((item) => {
+          if (item.brand == "شیائومی") {
+            this.selectedCategory.push(item);
+          }
+        });
+      }
       this.$emit("changeCategory", this.selectedCategory);
     },
   },
   watch: {
     isSamsung() {
-      this.selectedCategory = [];
-      this.products.filter((item) => {
-        if (item.brand == "سامسونگ") {
-          this.selectedCategory.push(item);
-        }
-      });
-      this.$emit("changeCategory", this.selectedCategory);
+      this.checkAll("سامسونگ");
       if (this.isSamsung == false) {
         this.selectedCategory = [];
         this.products.forEach((item) => {
@@ -322,14 +345,18 @@ export default {
       }
     },
     isApple() {
-      this.selectedCategory = [];
-      this.products.filter((item) => {
-        if (item.brand == "اپل") {
-          this.selectedCategory.push(item);
-        }
-      });
-      this.$emit("changeCategory", this.selectedCategory);
+      this.checkAll("اپل");
       if (this.isApple == false) {
+        this.selectedCategory = [];
+        this.products.forEach((item) => {
+          this.selectedCategory.push(item);
+        });
+        this.$emit("changeCategory", this.selectedCategory);
+      }
+    },
+    isXiaomi() {
+      this.checkAll("شیائومی");
+      if (this.isXiaomi == false) {
         this.selectedCategory = [];
         this.products.forEach((item) => {
           this.selectedCategory.push(item);
